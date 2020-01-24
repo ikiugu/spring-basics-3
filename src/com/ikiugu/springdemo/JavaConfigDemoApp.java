@@ -1,6 +1,5 @@
 package com.ikiugu.springdemo;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class JavaConfigDemoApp {
@@ -11,9 +10,11 @@ public class JavaConfigDemoApp {
 				new AnnotationConfigApplicationContext(Config.class);
 		
 		
-		Coach theSuperCoach = context.getBean("rugbyCoach", Coach.class);
+		Coach theSuperCoach = context.getBean("swimCoach", Coach.class);
 		
 		System.out.println("The coach says: " + theSuperCoach.getWorkoutPlan());
+		
+		System.out.println("\nToday the fortune is: " + theSuperCoach.getDailyFortune());
 		
 		context.close();
 
